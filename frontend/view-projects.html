@@ -1,0 +1,66 @@
+<!-- frontend/view-projects.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Projects - Early Warning System</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">
+            <h1>Early Warning System</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="clean-data.html" class="nav-link">Clean Data</a>
+            <a href="add-project.html" class="nav-link">Add Project</a>
+            <a href="view-projects.html" class="nav-link active">View Projects</a>
+            <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="page-header">
+        <h2>Projects</h2>
+        <p>Manage and monitor your projects</p>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+        <!-- Projects will be loaded dynamically -->
+    </div>
+
+    <div id="noProjects" class="empty-state" style="display: none;">
+        <p>No projects found. Create your first project!</p>
+        <a href="add-project.html" class="btn btn-primary">Add Project</a>
+    </div>
+</main>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <h3>Confirm Delete</h3>
+        <p>Enter your password to delete project: <span id="deleteProjectName"></span></p>
+        <form id="deleteForm">
+            <input type="hidden" id="deleteProjectId">
+            <div class="form-group">
+                <label for="deletePassword">Password</label>
+                <input type="password" id="deletePassword" required>
+            </div>
+            <div class="modal-actions">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

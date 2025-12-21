@@ -1,0 +1,122 @@
+<!-- frontend/clean-data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Data - Early Warning System</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">
+            <h1>Early Warning System</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="clean-data.html" class="nav-link active">Clean Data</a>
+            <a href="add-project.html" class="nav-link">Add Project</a>
+            <a href="view-projects.html" class="nav-link">View Projects</a>
+            <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="page-header">
+        <h2>Clean Data</h2>
+        <p>Upload and clean your time-series data</p>
+    </div>
+
+    <div class="clean-data-form">
+        <form id="cleanDataForm">
+            <div class="form-section">
+                <h3>Upload File</h3>
+                <div class="form-group">
+                    <label for="dataFile">Select CSV or Excel file</label>
+                    <input type="file" id="dataFile" name="dataFile" accept=".csv,.xlsx,.xls" required>
+                    <small>Supported formats: CSV, XLSX, XLS</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Project Information</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" name="projectName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectId">Project ID</label>
+                        <input type="text" id="projectId" name="projectId" pattern="[a-zA-Z0-9_-]+" required>
+                        <small>Use letters, numbers, hyphens, and underscores only</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Column Configuration</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="datetimeCol">Datetime Column</label>
+                        <select id="datetimeCol" name="datetimeCol" required>
+                            <option value="">Select column</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="targetCol">Target Column</label>
+                        <select id="targetCol" name="targetCol" required>
+                            <option value="">Select column</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ground Truth Columns</label>
+                    <div id="gndColsContainer" class="checkbox-group">
+                        <!-- Checkboxes will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Clean Data</button>
+                <button type="button" class="btn btn-secondary" id="previewBtn" disabled>Preview Data</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="resultsSection" class="results-section" style="display: none;">
+        <h3>Cleaning Results</h3>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <h4>Cleaning Report</h4>
+                <div id="cleaningReport"></div>
+            </div>
+
+            <div class="result-card">
+                <h4>Data Statistics</h4>
+                <div id="dataStatistics"></div>
+            </div>
+        </div>
+
+        <div class="plot-container">
+            <h4>Before vs After Comparison</h4>
+            <div id="comparisonPlot"></div>
+        </div>
+
+        <div class="download-section">
+            <button class="btn btn-success" id="downloadBtn">Download Cleaned Data</button>
+        </div>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/clean.js"></script>
+</body>
+</html>

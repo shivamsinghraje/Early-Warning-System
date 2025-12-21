@@ -1,0 +1,114 @@
+<!-- frontend/add-project.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project - Early Warning System</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">
+            <h1>Early Warning System</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="clean-data.html" class="nav-link">Clean Data</a>
+            <a href="add-project.html" class="nav-link active">Add Project</a>
+            <a href="view-projects.html" class="nav-link">View Projects</a>
+            <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="page-header">
+        <h2>Add New Project</h2>
+        <p>Create a new monitoring project with ML models</p>
+    </div>
+
+    <div class="add-project-form">
+        <form id="addProjectForm">
+            <div class="form-section">
+                <h3>Project Details</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" name="projectName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectId">Project ID</label>
+                        <input type="text" id="projectId" name="projectId" pattern="[a-zA-Z0-9_-]+" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Data Configuration</h3>
+                <div class="form-group">
+                    <label for="dataFile">Upload Data File</label>
+                    <input type="file" id="dataFile" name="dataFile" accept=".csv,.xlsx,.xls" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="datetimeCol">Datetime Column</label>
+                        <input type="text" id="datetimeCol" name="datetimeCol" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="targetCol">Target Column</label>
+                        <input type="text" id="targetCol" name="targetCol" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gndCols">Ground Truth Columns (comma-separated)</label>
+                    <input type="text" id="gndCols" name="gndCols" placeholder="col1,col2,col3" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Live Monitoring Configuration</h3>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isLiveEnabled" name="isLiveEnabled">
+                        Enable Live Monitoring
+                    </label>
+                </div>
+
+                <div id="liveConfig" style="display: none;">
+                    <div class="form-group">
+                        <label for="apiUrl">API URL</label>
+                        <input type="url" id="apiUrl" name="apiUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="apiToken">API Token</label>
+                        <input type="password" id="apiToken" name="apiToken">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Create Project</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="progressSection" class="progress-section" style="display: none;">
+        <h3>Creating Project...</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div id="progressStatus"></div>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

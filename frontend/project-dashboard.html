@@ -1,0 +1,120 @@
+<!-- frontend/project-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard - Early Warning System</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">
+            <h1>Early Warning System</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="clean-data.html" class="nav-link">Clean Data</a>
+            <a href="add-project.html" class="nav-link">Add Project</a>
+            <a href="view-projects.html" class="nav-link">View Projects</a>
+            <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="dashboard-header">
+        <h2 id="projectTitle">Project Dashboard</h2>
+        <div class="dashboard-controls">
+            <select id="timeRange" class="time-range-select">
+                <option value="1d">Last 24 Hours</option>
+                <option value="2d">
+                <option value="2d">Last 2 Days</option>
+                <option value="7d">Last 7 Days</option>
+                <option value="30d">Last 30 Days</option>
+                <option value="all">All Data</option>
+            </select>
+            <button class="btn btn-primary" id="refreshBtn">Refresh</button>
+            <button class="btn btn-secondary" id="fullscreenBtn">Fullscreen</button>
+        </div>
+    </div>
+
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h4>Total Points</h4>
+            <p id="totalPoints">-</p>
+        </div>
+        <div class="stat-card">
+            <h4>Anomalies</h4>
+            <p id="anomalyCount">-</p>
+        </div>
+        <div class="stat-card">
+            <h4>Last Update</h4>
+            <p id="lastUpdate">-</p>
+        </div>
+        <div class="stat-card">
+            <h4>Status</h4>
+            <p id="projectStatus">-</p>
+        </div>
+    </div>
+
+    <div class="plot-container">
+        <div id="mainPlot"></div>
+    </div>
+
+    <div class="dashboard-actions">
+        <div class="live-controls" id="liveControls" style="display: none;">
+            <button class="btn btn-success" id="fetchLiveBtn">Fetch Live Data</button>
+            <span class="live-indicator" id="liveIndicator"></span>
+        </div>
+
+        <div class="manual-entry">
+            <h4>Manual Entry</h4>
+            <form id="manualEntryForm" class="inline-form">
+                <input type="number" id="manualValue" placeholder="Enter value" step="0.01" required>
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="data-table-section">
+        <h3>Recent Forecasts</h3>
+        <div class="table-container">
+            <table id="forecastTable">
+                <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Actual</th>
+                    <th>Forecasted</th>
+                    <th>Status</th>
+                    <th>Error</th>
+                </tr>
+                </thead>
+                <tbody id="forecastTableBody">
+                <!-- Data will be loaded dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/plotting.js"></script>
+<script>
+    // Get project ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+
+    if (!projectId) {
+        window.location.href = 'view-projects.html';
+    }
+
+    // Load project dashboard
+    loadProjectDashboard(projectId);
+</script>
+</body>
+</html>

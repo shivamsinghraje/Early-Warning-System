@@ -1,0 +1,105 @@
+<!--&lt;!&ndash; frontend/login.html &ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Login - Early Warning System</title>-->
+<!--    <link rel="stylesheet" href="css/main.css">-->
+<!--</head>-->
+<!--<body class="login-page">-->
+<!--<div class="login-container">-->
+<!--    <div class="login-card">-->
+<!--        <div class="login-header">-->
+<!--            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">-->
+<!--            <h2>Early Warning System</h2>-->
+<!--        </div>-->
+
+<!--        <form id="loginForm" class="login-form">-->
+<!--            <div class="form-group">-->
+<!--                <label for="username">Username</label>-->
+<!--                <input type="text" id="username" name="username" value="admin" required>-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <label for="password">-->
+<!--                    <label for="password">Password</label>-->
+<!--                    <input type="password" id="password" name="password" required>-->
+<!--            </div>-->
+
+<!--            <button type="submit" class="btn btn-primary btn-block">Login</button>-->
+
+<!--            <div id="errorMessage" class="error-message"></div>-->
+<!--        </form>-->
+
+<!--        <div class="setup-section" id="setupSection" style="display: none;">-->
+<!--            <p>No admin account found. Please set up admin password:</p>-->
+<!--            <form id="setupForm">-->
+<!--                <div class="form-group">-->
+<!--                    <label for="setupPassword">New Password (min 8 characters)</label>-->
+<!--                    <input type="password" id="setupPassword" name="setupPassword" minlength="8" required>-->
+<!--                </div>-->
+<!--                <button type="submit" class="btn btn-primary btn-block">Setup Admin</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script src="js/auth.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!-- frontend/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Early Warning System</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="login-page">
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <img src="assets/nhpc_logo.png" alt="NHPC Logo" class="logo">
+            <h2>Early Warning System</h2>
+        </div>
+
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="admin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+
+        <div class="setup-section" id="setupSection" style="display: none;">
+            <p>No admin account found. Please set up admin password:</p>
+            <form id="setupForm">
+                <div class="form-group">
+                    <label for="setupPassword">New Password (min 8 characters)</label>
+                    <input type="password" id="setupPassword" name="setupPassword" minlength="8" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Setup Admin</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Load main.js FIRST -->
+<script src="js/main.js"></script>
+<!-- Then load auth.js -->
+<script src="js/auth.js"></script>
+</body>
+</html>
