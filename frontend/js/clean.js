@@ -1,4 +1,3 @@
-// frontend/js/clean.js
 document.addEventListener('DOMContentLoaded', () => {
     const cleanDataForm = document.getElementById('cleanDataForm');
     const dataFileInput = document.getElementById('dataFile');

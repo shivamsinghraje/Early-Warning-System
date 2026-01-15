@@ -1,4 +1,3 @@
-// src/main/java/com/ews/model/LiveForecast.java
 package com.ews.model;
 
 import jakarta.persistence.*;

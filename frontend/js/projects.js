@@ -1,4 +1,3 @@
-// frontend/js/projects.js
 document.addEventListener('DOMContentLoaded', () => {
     // Check which page we're on
     if (document.getElementById('addProjectForm')) {

@@ -1,4 +1,3 @@
-// src/main/java/com/ews/service/ProjectService.java
 package com.ews.service;
 
 import com.ews.dto.ProjectRequest;
@@ -149,7 +148,7 @@ public class ProjectService {
         try {
             FileUtils.deleteDirectory(Paths.get(storagePath + "/projects/" + projectId));
         } catch (Exception e) {
-            // Log error but don't fail
+            // Log error but do not fail
         }
     }
 }

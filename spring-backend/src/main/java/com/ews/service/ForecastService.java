@@ -1,4 +1,3 @@
-// src/main/java/com/ews/service/ForecastService.java (Complete)
 package com.ews.service;
 
 import com.ews.dto.ForecastResponse;

@@ -1,10 +1,3 @@
-//package com.ews.config;
-//
-//public class AppConfig {
-//}
-
-
-// src/main/java/com/ews/config/AppConfig.java
 package com.ews.config;
 
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,3 @@
-// frontend/js/api.js
 class EWSApi {
     constructor() {
         this.baseUrl = API_BASE_URL;

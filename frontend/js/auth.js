@@ -1,18 +1,17 @@
-// frontend/js/auth.js
 document.addEventListener('DOMContentLoaded', async () => {
     const loginForm = document.getElementById('loginForm');
     const setupForm = document.getElementById('setupForm');
     const setupSection = document.getElementById('setupSection');
     const errorMessage = document.getElementById('errorMessage');
 
-    // Check if admin exists
+    // Checking if admin exists
     try {
         const response = await fetch(`${API_BASE_URL}/auth/setup`, {
             method: 'GET'
         });
 
         if (response.status === 404) {
-            // No admin exists, show setup form
+            // if No admin exists, then show setup form
             loginForm.style.display = 'none';
             setupSection.style.display = 'block';
         }
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error checking admin status:', error);
     }
 
-    // Handle login
+    // Handling login
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();

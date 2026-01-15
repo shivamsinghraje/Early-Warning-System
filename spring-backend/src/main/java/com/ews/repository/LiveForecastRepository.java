@@ -1,4 +1,3 @@
-// src/main/java/com/ews/repository/LiveForecastRepository.java
 package com.ews.repository;
 
 import com.ews.model.LiveForecast;

@@ -1,4 +1,3 @@
-// src/main/java/com/ews/repository/ProjectRepository.java
 package com.ews.repository;
 
 import com.ews.model.Project;

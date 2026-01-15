@@ -1,4 +1,3 @@
-// src/main/java/com/ews/model/Project.java
 package com.ews.model;
 
 import jakarta.persistence.*;

@@ -1,4 +1,3 @@
-// src/main/java/com/ews/dto/LoginRequest.java
 package com.ews.dto;
 
 import lombok.Data;

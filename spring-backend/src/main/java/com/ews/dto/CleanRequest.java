@@ -1,4 +1,3 @@
-// src/main/java/com/ews/dto/CleanRequest.java
 package com.ews.dto;
 
 import lombok.Data;

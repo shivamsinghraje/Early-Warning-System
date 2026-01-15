@@ -1,4 +1,3 @@
-// src/main/java/com/ews/controller/ForecastController.java
 package com.ews.controller;
 
 import com.ews.dto.ForecastResponse;

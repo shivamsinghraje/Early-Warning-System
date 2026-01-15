@@ -1,4 +1,3 @@
-// frontend/js/plotting.js
 function createDashboardPlot(data) {
     const plotDiv = document.getElementById('mainPlot');
 
