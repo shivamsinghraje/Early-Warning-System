@@ -1,4 +1,4 @@
-# 🚨 Early Warning System (EWS)
+# 🚨 Early Warning System (EWS) 
 
 A production-inspired **Early Warning System** for dam discharge monitoring, forecasting, and anomaly detection — designed with a **Java Spring Boot backend**, a **Python-based ML microservice**, and a **lightweight vanilla JS frontend**.
 
