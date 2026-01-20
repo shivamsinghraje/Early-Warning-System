@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // Add Project Page
 function initAddProject() {
     const form = document.getElementById('addProjectForm');

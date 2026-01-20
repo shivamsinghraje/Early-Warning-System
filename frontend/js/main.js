@@ -9,6 +9,7 @@ function checkAuth() {
     }
 }
 
+
 // Setup axios-like fetch wrapper
 async function apiRequest(url, options = {}) {
     const token = localStorage.getItem('authToken');

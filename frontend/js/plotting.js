@@ -7,6 +7,7 @@ function createDashboardPlot(data) {
     const forecastedValues = data.map(d => d.forecastedValue);
     const anomalies = data.filter(d => d.status === 'Anomaly');
 
+
     // Actual values trace (dotted line)
     const actualTrace = {
         x: timestamps,

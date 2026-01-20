@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let selectedFile = null;
     let cleanedDataUrl = null;
-
     // Handle file selection
     dataFileInput.addEventListener('change', async (e) => {
         const file = e.target.files[0];

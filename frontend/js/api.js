@@ -2,7 +2,6 @@ class EWSApi {
     constructor() {
         this.baseUrl = API_BASE_URL;
     }
-
     // Projects API
     async getProjects() {
         return apiRequest('/projects');

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const setupSection = document.getElementById('setupSection');
     const errorMessage = document.getElementById('errorMessage');
 
+
     // Checking if admin exists
     try {
         const response = await fetch(`${API_BASE_URL}/auth/setup`, {

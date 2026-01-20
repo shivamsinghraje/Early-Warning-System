@@ -64,7 +64,6 @@
 //        if (!passwordEncoder.matches(oldPassword, user.getPasswordHash())) {
 //            throw new RuntimeException("Invalid old password");
 //        }
-//
 //        user.setPasswordHash(passwordEncoder.encode(newPassword));
 //        userRepository.save(user);
 //    }

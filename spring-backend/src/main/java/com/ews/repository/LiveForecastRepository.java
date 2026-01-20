@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 @Repository
 public interface LiveForecastRepository extends JpaRepository<LiveForecast, Long> {
     Page<LiveForecast> findByProjectIdRefOrderByTimestampDesc(String projectIdRef, Pageable pageable);

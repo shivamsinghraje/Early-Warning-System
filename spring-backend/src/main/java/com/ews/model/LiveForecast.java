@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "live_forecasts", indexes = {
         @Index(name = "idx_project_timestamp", columnList = "project_id_ref, timestamp")

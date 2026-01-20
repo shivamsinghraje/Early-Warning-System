@@ -5,6 +5,8 @@ class CleanDataRequest(BaseModel):
     datetime_col: str
     target_col: str
     gnd_cols: List[str]
+    project_name: str
+    project_id: str
 
 class TrainRequest(BaseModel):
     project_id: str
@@ -18,6 +20,7 @@ class CleanDataResponse(BaseModel):
     cleaned_path: str
     cleaning_report: Dict[str, Any]
     statistics: Dict[str, float]
+    plot_data: Dict[str, Any]
     final_rows: int
     final_cols: int
 

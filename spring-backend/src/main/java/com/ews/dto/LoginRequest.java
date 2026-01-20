@@ -3,6 +3,7 @@ package com.ews.dto;
 import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
 
+
 @Data
 public class LoginRequest {
     @NotBlank

@@ -150,5 +150,6 @@ public class ProjectService {
         } catch (Exception e) {
             // Log error but do not fail
         }
+
     }
 }

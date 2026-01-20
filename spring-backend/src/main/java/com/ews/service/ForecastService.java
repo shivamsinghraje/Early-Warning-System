@@ -102,4 +102,5 @@ public class ForecastService {
                 org.springframework.data.domain.PageRequest.of(0, 26000)
         ).getContent();
     }
+
 }

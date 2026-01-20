@@ -32,7 +32,7 @@ public class AuthController {
     public ResponseEntity<Map<String, Object>> setupAdmin(@RequestBody Map<String, String> request) {
         String password = request.get("password");
         if (password == null || password.length() < 8) {
-            throw new RuntimeException("Password must be at least 8 characters");
+            throw new RuntimeException("Password must be at least 8 characters ");
         }
         return ResponseEntity.ok(authService.setupAdmin(password));
     }

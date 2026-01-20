@@ -6,6 +6,7 @@ import org.hibernate.annotations.Type;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "projects")
 @Data
